@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { WordleContext } from "../../App";
+import WordleContext from "../Context/WordleContext";
+
 
 interface Props {
   letter: string;

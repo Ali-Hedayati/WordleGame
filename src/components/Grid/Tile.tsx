@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { WordleContext } from "../../App";
+import WordleContext from "../Context/WordleContext";
 
 interface Props {
   id: number;
@@ -20,8 +20,8 @@ const Tile = ({ id, rowId }: Props) => {
   };
 
   function changeColors() {
-    const arrayWord = word.split("");
-    if (arrayWord.includes(letter)) {
+    const arrayWord = word?.split("");
+    if (arrayWord?.includes(letter)) {
       if (arrayWord[id] === letter) {
         return setColor({ back: "lightgreen", font: "white" });
       }
