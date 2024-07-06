@@ -3,11 +3,9 @@ import MainPage from "./components/MainPage";
 import WordleContextProvider from "./components/Context/WordleContextProvider";
 function App() {
   return (
-    <>
-      <WordleContextProvider>
-        <MainPage />
-      </WordleContextProvider>
-    </>
+    <WordleContextProvider>
+      <MainPage />
+    </WordleContextProvider>
   );
 }
 
