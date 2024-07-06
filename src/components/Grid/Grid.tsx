@@ -7,7 +7,7 @@ const Grid = () => {
     <>
       <div className="m-4">
         {rows.map((_, index) => (
-          <Row key={index} />
+          <Row key={index} id={index} />
         ))}
       </div>
     </>

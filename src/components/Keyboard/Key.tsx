@@ -1,12 +1,27 @@
+import { useContext } from "react";
+import { WordleContext } from "../../App";
+
 interface Props {
   letter: string;
   isMainButton: boolean;
 }
 
 const Key = ({ isMainButton, letter }: Props) => {
+  const { guessTheWord, deleteHandler, enterHandler } =
+    useContext(WordleContext);
+
+  function handleClickMainButton() {
+    if (letter == "Enter") {
+      enterHandler();
+    } else {
+      deleteHandler();
+    }
+  }
+
   if (isMainButton) {
     return (
       <button
+        onClick={() => handleClickMainButton()}
         style={{
           width: 65.4,
           height: 58,
@@ -29,6 +44,7 @@ const Key = ({ isMainButton, letter }: Props) => {
   }
   return (
     <button
+      onClick={() => guessTheWord(letter)}
       style={{
         width: 43,
         height: 58,
