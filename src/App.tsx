@@ -1,13 +1,8 @@
 import "./App.css";
-import Grid from "./components/Grid/Grid";
+import MainPage from "./components/MainPage";
 
 function App() {
-  return (
-    <div>
-      <h1>Wordle Game</h1>
-      <Grid />
-    </div>
-  );
+  return <MainPage />;
 }
 
 export default App;
