@@ -10,7 +10,7 @@ interface Props {
 const WordleContextProvider = ({ children }: Props) => {
   const sampledWord = _.sample(words);
   const initialWord = sampledWord ? sampledWord.toUpperCase() : "REACT";
-  const [word, setWord] = useState<string>(initialWord);
+  const [word] = useState<string>(initialWord);
   const [completedRows, setCompletedRows] = useState<number[]>([]);
   const [guessedWord, setGuessedWord] = useState<string>("");
   const [currentRow, setCurrentRow] = useState<number>(0);
@@ -47,7 +47,7 @@ const WordleContextProvider = ({ children }: Props) => {
   function deleteHandler() {
     setGuessedWord(guessedWord.slice(0, guessedWord.length - 1));
   }
-  
+
   return (
     <WordleContext.Provider
       value={{
